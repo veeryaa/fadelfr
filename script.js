@@ -46,7 +46,7 @@ $(document).ready(function () {
 
     if (e.ctrlKey && e.key === 'c') {
       e.preventDefault(); 
-      $('.prompt').before(`<div class="line">&gt; ${command}</div>`); 
+      $('<div class="line"></div>').text('> ' + command).insertBefore('.prompt'); 
       $('.prompt').remove(); 
       addPrompt(); 
       window.scrollTo(0, document.body.scrollHeight);
