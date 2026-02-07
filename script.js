@@ -25,7 +25,7 @@ $(document).ready(function () {
         return;
       }
 
-      $('.prompt').before(`<div class='line'>&gt; ${command}</div>`);
+      $('<div class="line"></div>').text('> ' + command).insertBefore('.prompt');
       $('.prompt').remove(); 
 
       if (command === 'clear') {
