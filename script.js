@@ -37,7 +37,8 @@ $(document).ready(function () {
       if (responses[command]) {
         $('#terminal').append(`<div class='line'>${responses[command]}</div>`);
       } else {
-        $('#terminal').append(`<div class='line' style='color:#ff3333'>command not found: ${command}</div>`);
+        const $errorLine = $('<div class="line" style="color:#ff3333"></div>').text('command not found: ' + command);
+        $('#terminal').append($errorLine);
       }
 
       addPrompt();
